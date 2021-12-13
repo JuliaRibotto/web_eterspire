@@ -1,22 +1,22 @@
-let itemA = document.querySelector("#what");
-let itemB = document.querySelector("#rules");
-let itemC = document.querySelector("#gallery");
+const express = require('express');
+const app = express();
+const routes = require("./routes/eterspireRoutes");
+const path = require('path');
+const databaseConnection = require('../config/database');
+const port = process.env.PORT || 3000;
 
-let articleA = document.querySelector(".info2-kn-article");
-let articleB = document.querySelector("#articleB");
-let slider = document.querySelector(".slider");
-let iconsSoc = document.querySelector(".info2-soc");
+databaseConnection.connect();
 
-itemA.addEventListener("click", ()=>{
-    articleA.classList.toggle("show");
-    iconsSoc.classList.toggle("align");
+app.use(express.json());
+app.use(express.urlencoded ({extended:false}));
+
+app.use("",routes);
+
+app.set('views',path.join(__dirname,'views'));
+app.set('view engine','ejs');
+app.use(express.static(path.join(__dirname,'public')));
+
+//------------------------------
+app.listen(3000,()=>{
+    console.log(`Server running on port ${port}`);
 });
-
-itemB.addEventListener("click", ()=>{
-    articleB.classList.toggle("show");
-    iconsSoc.classList.toggle("align");
-})
-
-
-
-//Cómo aplico un mismo evento a diferentes elementos? (para evitar repetir código)

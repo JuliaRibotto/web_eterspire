@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ('../partials/head.ejs') %>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Eterspire</title>
+</head>
+<body>
+    <div id="sub-section"></div>
+    <header>
+        <nav class="top" >
+            <img class="logo-white" src="images/Website_Logo_White.png" alt="Eterspire basic logo">
+            <h1 class="title-cell">Eterspire</h1>
+            <ol class="menu">
+                <li><a class="link" href="#sub-section">// Home</a></li>
+                <li><a class="link" href="#about-section">// Contact us</a></li>
+            </ol>
+        </nav>
+
+        <section class="sub">
+            <div class="intro">
+                <h1 class="community">The Eterspire Community!</h1>
+                <p class="description">Become a part of this wholesome adventure</p>
+            </div>
+            <div class="sub-img">
+                <img class="eter-people" src="images/eterpeople.png" alt="Eterspire characters">
+                <a class="btn-sub" href="#">Sign up</a>
+            </div>  
+        </section>
+        <section class="options">
+                <a class="card" href="#info-section">
+                    <img class="logo" src="images/learn.png" alt="Light bulb icon">
+                    <h2 class="content">Learn about Eterspire</h2>
+                    <h2 class="alt-content">Learn</h2>
+                </a>
+                <a class="card" href="/report" target="_blank">
+                    <img class="logo" src="images/build.png" alt="Community icon">
+                    <h2 class="content">Help build a better experience</h2>
+                    <h2 class="alt-content">Collab</h2>
+                </a>
+                <a class="card" href="#">
+                    <img class="logo" src="images/member.png" alt="Helmet icon">
+                    <h2 class="content">Become a member</h2>
+                    <h2 class="alt-content">Member</h2>
+                </a>
+        </section>
+    </header>
+
+    <div class="banner"></div>
+
+    <main>
+        <div class="info">
+            <h2 class="section-title">News</h2>
+            <section class="news">
+
+
+                <% data.forEach((article) => { %>    
+                    <div class="article">
+                        <div class="img-news">
+                            <img src="<%= article.image %>" alt="<%= article.alt %>">
+                        </div>
+                            
+                        <h2 class="title-news"> <%= article.title %> </h2>
+                        <a class="preview" href="">
+                        <%= article.snippet %>   
+                        </a>
+
+                        <div class="date">
+                            <%= article.date %> 
+                        </div>
+                    </div>
+                <% }); %>
+
+            </section>
+            
+            <div id="info-section"></div>
+            <h2 class="section-title">Knowledge base</h2>
+            <section class="info2" >
+                <ol class="info2-kn">
+                    <li class="kn-item" id="what">What is Eterspire?</li>
+                        <div id="articleA" class="info2-kn-article">
+                            <span>The game is <b>100% browser-based</b>. It's free to play with an optional Membership Subscription. You don't have to download anything to play.</span> 
+                            <br>
+                            <img class="img-article" src="images/logo_web.png" alt="Eterspire official logo">
+                            <br>
+                            <span><i><b>What can you do in Eterspire?</b></i></span>
+                            <br>
+                            Anything you want! Explore an open-world comprised of different maps filled with monsters and loot. Meet new friends, customize your character, cook, fish, go on adventures, complete quests, collect dozens of different items, and then come back for more! The game is regularly updated with new content and features.
+                        </div>
+                    <li class="kn-item" id="rules">Rules</li>
+                    <div id="articleB" class="info2-kn-article">
+                        <ol class="rules">
+                            <li class="rule-item"> <span class="num">1</span> Be nice to others. That's the main rule here.</li>
+                            <li class="rule-item">  <span class="num">2</span> Hacking the game, botting the game, abusing bugs, macroing, mistreating other players, being discriminatory (including, but not limited to, being racist), spamming the chat, creating a character with an offensive name, etc. are all considered against the rules and will be punished by muting and/or ban.</li>
+                            <li class="rule-item">  <span class="num">3</span> You must be over 13 years old to play Eterspire.</li>
+                            <li class="rule-item">  <span class="num">4</span> If you believe you are doing something wrong, then you probably are.</li>
+                            <li class="rule-item">  <span class="num">5</span> Of course, these rules are highly subjective. Interpretation of these rules is at the discretion of the GMs.</li>
+                            <div class="notice"> <span class="num">*</span>(If you have any questions regarding the rules, please ask in any of the Eterspire community sites. We'll be more than happy to address your concerns.)</div>
+
+                        </ol>
+                    </div>
+                    <li class="kn-item" >The Eterspire Wiki</li>
+                    <li class="kn-item" >Highscores</li>
+                    <li id="gallery" class="kn-item" >Screenshot Gallery</li>
+                    <div class="slider">
+
+                    </div>
+                </ol>
+                
+                <div class="info2-soc">
+                    <a class="icon-soc" href="https://www.reddit.com/r/Eterspire/" target="_blank">
+                       <img src="images/reddit.png" alt="Reddit logo">
+                       <p>Reddit</p>
+                    </a>
+                    <a class="icon-soc" href="https://twitter.com/martulartu" target="_blank">
+                        <img src="images/twitter.png" alt="Twitter logo">
+                        <p>Twitter</p>
+                    </a>
+                     <a class="icon-soc" href="https://discord.com/invite/6zVfuAYctU" target="_blank">
+                        <img src="images/Discord.png" alt="Discord logo">
+                        <p>Discord</p>
+                     </a>                    
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <section class="about" id="about-section">
+        <div class="container">
+            <img class="img-about" src="images/lartu.jpg" alt="Lartu's avatar">
+            <div class="text-about">
+                <h1>Lartu</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit
+                </p>
+            </div>
+            <div class="soc-about">
+                <a href="https://twitter.com/martulartu" target="_blank">
+                    <img id="soc-twitter" src="images/twitter2.png" alt="Lartu's twitter">
+                </a>
+                <a href="http://lartu.net/" target="_blank">
+                    <img src="images/lartunet.png" alt="Lartu's webpage">
+                </a>
+            </div>
+        </div>
+        <div class="container">
+            <img class="img-about" src="images/tejo.jpg" alt="Tejo's avatar">
+            <div class="text-about">
+                <h1>Tejo</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit
+                </p>
+            </div>
+            <div class="soc-about">
+                <a href="https://twitter.com/tejo240" target="_blank">
+                    <img src="images/twitter2.png" alt="Tejo's twitter">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="go-top-container">
+      <a class="go-top" href="#"></a>
+    </div>
+    
+
+    <footer>
+        <%- include ('../partials/footer.ejs') %> 
+    </footer>
+
+    <script src="app.js"></script>
+
+    <!--No supe dónde ponerlo para que corra-->
+    <script>
+        let itemA = document.querySelector("#what");
+        let itemB = document.querySelector("#rules");
+        let itemC = document.querySelector("#gallery");
+
+        let articleA = document.querySelector(".info2-kn-article");
+        let articleB = document.querySelector("#articleB");
+        let slider = document.querySelector(".slider");
+        let iconsSoc = document.querySelector(".info2-soc");
+
+        itemA.addEventListener("click", ()=>{
+            articleA.classList.toggle("show");
+            iconsSoc.classList.add("align");
+        });
+
+        itemB.addEventListener("click", ()=>{
+            articleB.classList.toggle("show");
+            iconsSoc.classList.add("align");
+        });
+    </script>
+</body>
+</html>

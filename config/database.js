@@ -5,6 +5,8 @@ const databaseConnection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     database: 'eterspireweb',
+    password:'',
+    port:'',
 });
 
 databaseConnection.connect((error) => {

@@ -1,6 +1,5 @@
 const mysql = require('mysql2');
 
-
 const databaseConnection = mysql.createConnection({
     host: 'btaxfsdkx2gkgtiti3ul-mysql.services.clever-cloud.com',
     user: 'upbwnaevld75m24q',
